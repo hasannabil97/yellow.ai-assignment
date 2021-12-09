@@ -32,12 +32,12 @@ npm run start
 
 ### Weather API
 use the following endpoint to `GET` weather data or weather forecast
-> http://localhost:3000/weather/status?command=
+> http://localhost:<SERVICE_PORT>/weather/status?command=
 
 query parameter `command` contains a request or command.
 
 ### Covid API
 use the following endpoint to `GET` covid statistics data in Indonesia
-> http://localhost:3000/covid/status?date=
+> http://localhost:<SERVICE_PORT>/covid/status?date=
 
 query parameter `date` is a date.
