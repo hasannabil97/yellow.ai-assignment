@@ -11,12 +11,12 @@ module.exports = {
         let result     = [];
         lowerSplit.forEach(data => {
             if (data.length) {
-                let assumptionsLength = 5;
+                let assumptionsLength = 6;
                 let dataArr           = data.split(' ');
                 let weatherIdx        = dataArr.indexOf('weather');
                 let forecastIdx       = dataArr.indexOf('forecast');
                 if (weatherIdx > -1) {
-                    let assumptions = dataArr.slice(weatherIdx).slice(1, assumptionsLength).join(' ');
+                    let assumptions = dataArr.slice(weatherIdx-2 < 0 ? 0 : weatherIdx-2).slice(0, assumptionsLength).join(' ');
                     if (assumptions.length) {
                         result.push({
                             get  : 'current.json',
@@ -24,7 +24,7 @@ module.exports = {
                         });
                     }
                 } else if (forecastIdx > -1) {
-                    let assumptions = dataArr.slice(forecastIdx).slice(1, assumptionsLength).join(' ');
+                    let assumptions = dataArr.slice(forecastIdx-2 < 0 ? 0: forecastIdx-2).slice(0, assumptionsLength).join(' ');
                     if (assumptions.length) {
                         result.push({
                             get  : 'forecast.json',
@@ -58,7 +58,6 @@ module.exports = {
             console.log(error);
             return null;
         }
-        
     }
 
 }
