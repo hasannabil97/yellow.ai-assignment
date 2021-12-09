@@ -7,7 +7,8 @@ module.exports = {
         splitters.forEach(data => {
             command = command.split(data).join(',');    
         });
-        let lowerSplit = command.toLowerCase().split(',')
+        // remove with conjuction, because there is a city with 'with' conjuction
+        let lowerSplit = command.toLowerCase().split(' with ').join(' ').split(',');
         let result     = [];
         lowerSplit.forEach(data => {
             if (data.length) {

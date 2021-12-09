@@ -14,7 +14,6 @@ module.exports = {
                 if (requestList.length == 0) {
                     res.status(400);
                 }
-                console.log(requestList) 
                 const result = [];
                 for (option of requestList) {
                     const get = await WeatherHelper.getWeatherAPI(option);
