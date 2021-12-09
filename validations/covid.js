@@ -5,7 +5,7 @@ module.exports = {
 
     getIndonesianCovid: (req) => {
         const schema = {
-            date: { type:'string' }
+            date: { type:'string', empty: false }
         };
         const result = v.validate(req.query, schema);
         if (result === true) {
