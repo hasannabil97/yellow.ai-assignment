@@ -17,7 +17,6 @@ module.exports = {
             .split('rd').join('|')
             .split('th').join('|')
             .split('|').filter(x => x);
-            
         if (dateArr.length == 3) {
             dateArr.forEach((data, index) => {
                 const checkMonth = monthName.findIndex(x => x.includes(data));
