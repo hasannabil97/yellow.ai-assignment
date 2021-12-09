@@ -3,7 +3,7 @@ const api = require('express').Router();
 // import controller modules
 const WeatherController = require('../controllers/weather');
 
-api.get('/information', (req, res) => {
+api.get('/status', (req, res) => {
     WeatherController.getWeatherInfo(req, res);
 });
 
